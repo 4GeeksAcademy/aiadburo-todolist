@@ -42,12 +42,12 @@ export const TodoList = () => {
               todos.map((item) => (
                 <li
                   key={item.id}
-                  className="list-group-item d-flex justify-content-between align-items-center"
+                  className="list-group-item d-flex justify-content-between align-items-center position-relative"
                 >
                   {item.todo}
                   <button
                     type="button"
-                    className="btn btn-sm btn-outline-danger"
+                    className="btn btn-sm btn-outline-danger delete-btn"
                     onClick={() => deleteTask(item.id)}
                     aria-label={`Eliminar tarea ${item.todo}`}
                   >
@@ -57,7 +57,7 @@ export const TodoList = () => {
               ))
             ) : (
               <li className="list-group-item text-center text-muted">
-                No tienes tareas
+                No hay tareas, añadir tareas
               </li>
             )}
             <li className="list-group-item text-end text-muted">
